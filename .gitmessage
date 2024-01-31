@@ -1,0 +1,22 @@
+# Commit Template - Kunal Kumar
+# Subject Line: 50 Characters max.
+# For Emojis and Commit Scopes, Refer To: https://gitmoji.dev/ 
+<Emoji><Commit Scope>: Subject Line [<Branch Name>]
+
+# Describe Commit and Changes in small and concise paragraphs. Till Here 
+Describe the Problem/Feature. If there is a 
+problem, also describe the solution.
+
+Changes Made:
+	- In Bullet Points (<Filename>)
+	- 
+
+Files Changed:
+	Add Status of Files: From Below
+
+# Metadata
+[Issue/Feature Request]: #Issue Number
+Pull Request: #Request Number
+Date: dd/mm/yyyy, hh:mm A.M/P.M. <Timezone>
+
+All Done. 
