@@ -1,18 +1,16 @@
-[tool.poetry]
+[project]
 name = "medicheck"
 version = "0.1.0"
 description = "An application for managing pharmacies."
-authors = ["Kunal Kumar <kunalkumarchourasiya2021@gmail.com>"]
+authors = [{"name"="Kunal Kumar", "email"="kunalkumarchourasiya2021@gmail.com"}]
 license = "MIT"
+license-files = ["LICENSE"]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.11"
-mysql-connector-python = "^8.3.0"
-
-[tool.poetry.group.dev.dependencies]
-mysql-connector-python = "^8.3.0"
+requires-python = ">=3.11"
+keywords = ["MediCheck", "Pharmacy", "Management System"]
 
 [build-system]
 requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+mysql-connector-python = "^9.5.0"
