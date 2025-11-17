@@ -13,4 +13,4 @@ keywords = ["MediCheck", "Pharmacy", "Management System"]
 requires = ["poetry-core"]
 
 [tool.poetry.dependencies]
-mysql-connector-python = "^9.5.0"
+mariadb = "^1.1.14"

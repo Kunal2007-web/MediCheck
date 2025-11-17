@@ -1,5 +1,5 @@
 # Imports
-import mysql.connector as con
+import mariadb as con
 import pickle
 import os
 
@@ -8,7 +8,7 @@ import os
 if not os.path.isfile('./credentials.dat'):
     f = open('credentials.dat', 'wb+')
     print("Credentials File Not Found... Creating New File...")
-    username = input("Enter MySQL User: ")
+    username = input("Enter MariaDB User: ")
     password = input("Enter Password: ")
     credentials = (username, password)
     pickle.dump(credentials, f)
@@ -21,14 +21,16 @@ if not os.path.isfile('./credentials.dat'):
 print("Initializing SQL Connection...")
 f = open('credentials.dat', 'rb')
 credentials = pickle.load(f)
-db = con.connect(host='localhost', user=credentials[0], password=credentials[1])
-cur = db.cursor()
-if not db.is_connected():
-    print("Connection Failed. Exiting...")
-    exit(0)
-else:
-    print("Connection Successful.\n")
+try:
+    db = con.connect(
+        host="localhost",
+        user=credentials[0],
+        password=credentials[1]
+    )
+except con.Error as e:
+    print(f"Error connecting to MariaDB Platform: {e}")
 f.close()
+cur = db.cursor()
 
 # Create Databases & Tables
 print('Initializing Database and Tables...')
