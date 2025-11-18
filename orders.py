@@ -198,8 +198,7 @@ Completion Date: {order[9]}""")
                     else:
                         delete(result[m_choice-1][0])          
             elif choice == '4':
-                n = int(input('\nHow many orders to add? '))
-                add(n)
+                add()
             elif choice == '6':
                 print('\nGoing to Main Menu...\n')
                 break

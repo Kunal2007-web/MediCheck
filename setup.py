@@ -41,7 +41,7 @@ def initialize_db(db, cur):
     db.database = 'MediCheck'
     cur.execute('CREATE TABLE IF NOT EXISTS Medicines(MedID INTEGER PRIMARY KEY, Name VARCHAR(50) NOT NULL, Type VARCHAR(50) NOT NULL, Manufacture_Company VARCHAR(50) NOT NULL, Description VARCHAR(300), Side_Effects VARCHAR(300) NOT NULL, Price DECIMAL(6,2) NOT NULL, Available BOOLEAN NOT NULL, Latest_Batch_Date DATE);')
     cur.execute('CREATE TABLE IF NOT EXISTS Stocks(StockID INTEGER PRIMARY KEY, MedID INTEGER NOT NULL, Box_Count INTEGER NOT NULL, Arrival_Date DATE NOT NULL, Manufacture_Date DATE NOT NULL, Expiration_Date DATE NOT NULL, Price DECIMAL(7,2) NOT NULL, Shelf_No CHAR(4) NOT NULL, Finished BOOLEAN NOT NULL, FOREIGN KEY (MedID) REFERENCES Medicines(MedID) ON DELETE CASCADE);')
-    cur.execute('CREATE TABLE IF NOT EXISTS Orders(OrderID INTEGER PRIMARY KEY, Name VARCHAR(50) NOT NULL, Address VARCHAR(150) NOT NULL, Phone_No INTEGER NOT NULL, Order_Charge DECIMAL(7,2) NOT NULL, Order_Date DATE NOT NULL, Medicines VARCHAR(100) NOT NULL, Med_Count VARCHAR(100) NOT NULL, Completed BOOLEAN NOT NULL, Completion_Date DATE);')
+    cur.execute('CREATE TABLE IF NOT EXISTS Orders(OrderID INTEGER PRIMARY KEY, Name VARCHAR(50) NOT NULL, Address VARCHAR(150) NOT NULL, Phone_No BIGINT NOT NULL, Order_Charge DECIMAL(7,2) NOT NULL, Order_Date DATE NOT NULL, Medicines VARCHAR(100) NOT NULL, Med_Count VARCHAR(100) NOT NULL, Completed BOOLEAN NOT NULL, Completion_Date DATE);')
     print("Initialization Completed. Starting Application...\n")
 
 def setup_db():
